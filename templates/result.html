@@ -5,9 +5,10 @@
   <link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/grids-responsive-min.css">
   <link rel="stylesheet" href="http://yui.yahooapis.com/combo?pure/0.5.0/base-min.css&pure/0.5.0/grids-min.css&pure/0.5.0/grids-responsive-min.css">
 </head>
+<title> Fun to Bike </title>
 
 <div class="pure-menu pure-menu-open pure-menu-horizontal">
-  <a href="/" class="pure-menu-heading">API Project</a>
+  <a href="/" class="pure-menu-heading">Fun to Bike</a>
 
   <ul>
     <li><a href="/">Home</a></li>
@@ -37,7 +38,7 @@
     <b>Leg 1</b>: Walk {{rlist1[0]['legs'][0]['distance']['text']}} in {{rlist1[0]['legs'][0]['duration']['text']}}.<br>
     <br>
     <ol>{% for step in rlist1[0]['legs'][0]['steps'] %}
-    <li>{{step['html_instructions']|striptags}}<br></li>
+    <li>{{step['html_instructions']|safe}}<br></li>
     {% endfor %}
     </ol>
     <iframe
@@ -51,7 +52,7 @@
     <b>Leg 2</b>: Bike {{rlist2[0]['legs'][0]['distance']['text']}} in {{rlist2[0]['legs'][0]['duration']['text']}}.<br>
     <br><ol>
     {% for step in rlist2[0]['legs'][0]['steps'] %}
-    <li>{{step['html_instructions']|striptags}}<br></li>
+    <li>{{step['html_instructions']|safe}}<br></li>
     {% endfor %}</ol>
     <iframe
        width="500"
@@ -64,7 +65,7 @@
     <b>Leg 3</b>: Walk {{rlist3[0]['legs'][0]['distance']['text']}} in {{rlist3[0]['legs'][0]['duration']['text']}}.<br>
     <br><ol>
     {% for step in rlist3[0]['legs'][0]['steps'] %}
-    <li>{{step['html_instructions']|striptags}}<br></li>
+    <li>{{step['html_instructions']|safe}}<br></li>
     {% endfor %}</ol>
     <br>
     <iframe

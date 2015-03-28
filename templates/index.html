@@ -1,20 +1,29 @@
 {% extends "base.html" %}
   {% block bodycontent %}
 
- <u>Note</u>: Please use locations within the current Citibike Service area in Lower Manhattan and Downtown Brooklyn. Please also be as specific as you can with your queries! For example, type "345 Chambers Street New York, NY 10282" instead of "Chambers Street" (or face the wrath of our application). <br> <br>
+ <u>Note</u>: Please use locations within the current Citibike Service area in Lower Manhattan and Downtown Brooklyn. <br> <br>
 
 <form class="pure-form pure-form-aligned" method="POST">
     <fieldset>
 
         <div class="pure-control-group">
             <label for="origin">Origin Address</label>
-            <input id="origin" type="text" placeholder="Type origin here..." name="origin">
+            <input class="pure-input-2-3" id="origin" type="text" placeholder="Type origin here..." name="origin">
         </div>
 
         <div class="pure-control-group">
             <label for="destination">Destination Address</label>
-            <input id="destination" type="text" placeholder="Type destination here..." name="destination">
+            <input class="pure-input-2-3" id="destination" type="text" placeholder="Type destination here..." name="destination">
         </div>
+
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true&libraries=places"></script>
+<script type="text/javascript">
+  var input1 = document.getElementById('origin');
+  var input2 = document.getElementById('destination');
+var options = {componentRestrictions: {country: 'us'}};
+new google.maps.places.Autocomplete(input1, options);
+new google.maps.places.Autocomplete(input2, options);
+</script>
 
         <div class="pure-controls">
 
