@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+  {% block bodycontent %}
+
+ <u>Note</u>: Please use locations within the current Citibike Service area in Lower Manhattan and Downtown Brooklyn. Please also be as specific as you can with your queries! For example, type "345 Chambers Street New York, NY 10282" instead of "Chambers Street" (or face the wrath of our application). <br> <br>
+
+<form class="pure-form pure-form-aligned" method="POST">
+    <fieldset>
+
+        <div class="pure-control-group">
+            <label for="origin">Origin Address</label>
+            <input id="origin" type="text" placeholder="Type origin here..." name="origin">
+        </div>
+
+        <div class="pure-control-group">
+            <label for="destination">Destination Address</label>
+            <input id="destination" type="text" placeholder="Type destination here..." name="destination">
+        </div>
+
+        <div class="pure-controls">
+
+            <button type="submit" name="b" value="Search" class="pure-button pure-button-primary">Search</button>
+
+        </div>
+    </fieldset>
+</form>
+
+  {% endblock bodycontent %}

@@ -1,0 +1,7 @@
+- [ ] add Google Places autocomplete
+- [ ] take into account whether station has a bike available
+- [ ] clean up results page
+- [ ] give users option to make an account and save favorite routes
+- [ ] integrate realtime MTA info and/or weather forecast
+- [ ] deploy with Digital Ocean
+- [ ] make 5 minute video
