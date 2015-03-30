@@ -7,6 +7,7 @@ import urllib2, json, urllib, math, time, string
 key = 'AIzaSyBun2m9jaQTFGb0qtR7Shh7inqFhzKbLL4'
 
 app = Flask(__name__)
+app.secret_key = "don't store this on github"
 
 @app.route('/', methods=["POST","GET"])
 @app.route('/index', methods=["POST","GET"])
@@ -179,6 +180,5 @@ def getGoogleJSON(origin, destination, mode):
 		return rlist
 
 if __name__ == '__main__':
-        app.secret_key = "don't store this on github"
 	app.debug = True
 	app.run(host='0.0.0.0')
