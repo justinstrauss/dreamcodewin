@@ -25,52 +25,6 @@ new google.maps.places.Autocomplete(input1, options);
 new google.maps.places.Autocomplete(input2, options);
 </script>
 
-<script>
-var x = document.getElementById("origin");
-function getLocation() {
-if (navigator.geolocation) {
-navigator.geolocation.getCurrentPosition(showPosition);
-} else {
-x.value = "Enter your location manually.";
-}
-}
-
-function showPosition(position) {
- 
-  var lat = position.coords.latitude;
-  var lon = position.coords.longitude;
- 
-  //grab address via Google API using your position
-  var apiurl = 'http://maps.googleapis.com/maps/api/geocode/json?latlng='+lat+','+lon+'&sensor=true';
- 
-  //Google does not allow Cross Domain Access so let's use a Proxy: http://benalman.com/projects/php-simple-proxy/
-  var url = 'ba-simple-proxy.php?url='+encodeURIComponent(apiurl);
- 
-  //make the Ajax request
-  var xhr = new XMLHttpRequest();
- 
-  xhr.open("GET", url);
-  xhr.onload = function() {
-        
-      //if we make a successful request and it returns an address
-      if(this.status==200 && JSON.parse(xhr.responseText).contents.results.length > 0){
-        //get formatted address from https://developers.google.com/maps/documentation/geocoding/#ReverseGeocoding
-        var result = JSON.parse(xhr.responseText).contents.results[0].formatted_address;
-        x.value = result;
-        console.log(result);
-      } else {
-        //send some general error
-        info.innerHTML = "Could not find your location.";
-      }
- 
-  }
- 
-  xhr.send();
-                
-}
-getLocation();
-</script>
-
         <div class="pure-controls">
 
             <button type="submit" name="b" value="Search" class="pure-button pure-button-primary">Search</button>
