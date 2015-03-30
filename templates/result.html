@@ -42,8 +42,8 @@
     {% endfor %}
     </ol>
     <iframe
-       width="500"
-       height="350"
+       width='70%'
+       height='350px'
        frameborder="0" style="border:0"
        src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBun2m9jaQTFGb0qtR7Shh7inqFhzKbLL4&origin={{rlist1[0]['legs'][0]['start_location']['lat']}},{{rlist1[0]['legs'][0]['start_location']['lng']}}&destination={{rlist1[0]['legs'][0]['end_location']['lat']}},{{rlist1[0]['legs'][0]['end_location']['lng']}}&avoid=tolls|highways&mode=walking">
     </iframe>
@@ -55,8 +55,8 @@
     <li>{{step['html_instructions']|safe}}<br></li>
     {% endfor %}</ol>
     <iframe
-       width="500"
-       height="350"
+       width='70%'
+       height='350px'
        frameborder="0" style="border:0"
        src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBun2m9jaQTFGb0qtR7Shh7inqFhzKbLL4&origin={{rlist2[0]['legs'][0]['start_location']['lat']}},{{rlist2[0]['legs'][0]['start_location']['lng']}}&destination={{rlist2[0]['legs'][0]['end_location']['lat']}},{{rlist2[0]['legs'][0]['end_location']['lng']}}&avoid=tolls|highways&mode=bicycling">
     </iframe>
@@ -69,8 +69,8 @@
     {% endfor %}</ol>
     <br>
     <iframe
-       width="500"
-       height="350"
+       width='70%'
+       height='350px'
        frameborder="0" style="border:0"
        src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBun2m9jaQTFGb0qtR7Shh7inqFhzKbLL4&origin={{rlist3[0]['legs'][0]['start_location']['lat']}},{{rlist3[0]['legs'][0]['start_location']['lng']}}&destination={{rlist3[0]['legs'][0]['end_location']['lat']}},{{rlist3[0]['legs'][0]['end_location']['lng']}}&avoid=tolls|highways&mode=walking">
     </iframe>
@@ -96,16 +96,16 @@
     <br>
     {% if stepdict['travel_mode']=="TRANSIT" %}
     <iframe
-       width="500"
-       height="350"
+       width='70%'
+       height='350px'
        frameborder="0" style="border:0"
        src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBun2m9jaQTFGb0qtR7Shh7inqFhzKbLL4&origin={{stepdict['start_location']['lat']}},{{stepdict['start_location']['lng']}}&destination={{stepdict['end_location']['lat']}},{{stepdict['end_location']['lng']}}&avoid=tolls|highways&mode=transit">
     </iframe>
     <br>
     {% elif stepdict['travel_mode']=="WALKING" %}
     <iframe
-       width="500"
-       height="350"
+       width='70%'
+       height='350px'
        frameborder="0" style="border:0"
        src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyBun2m9jaQTFGb0qtR7Shh7inqFhzKbLL4&origin={{stepdict['start_location']['lat']}},{{stepdict['start_location']['lng']}}&destination={{stepdict['end_location']['lat']}},{{stepdict['end_location']['lng']}}&avoid=tolls|highways&mode=walking">
     </iframe>
